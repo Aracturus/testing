@@ -836,12 +836,8 @@ filter: brightness(1.75);
 
     }
 
-    .intro--options>a {
-        margin-right: 30px
-    }
-
-    .intro--options>a:last-child {
-        margin-right: 0
+    .intro--options {
+        display: none;
     }
 }
 
@@ -851,15 +847,22 @@ filter: brightness(1.75);
     }
 
     .intro--banner h1 {
-        font-size: 44px
+        font-size: 44px;
+        margin-top: 10rem;
     }
 
     .intro--banner img {
-        width: 330px
+        width: 450px;
+        
+    }
+    .intro--line{
+        position: relative;
+        margin-top: -9rem;
+        margin-right: 4rem;
     }
 
     .intro--options {
-        display: block;
+        display: none;
 margin-top: 5%;
     }
 
@@ -883,8 +886,8 @@ margin-top: 5%;
         font-size: 55px
     }
 
-    /*.intro--banner img {
-   
+    *.intro--banner img {
+
     }
 }
 
