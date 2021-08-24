@@ -828,7 +828,8 @@ filter: brightness(2);
     }
 
     .intro--banner h1 {
-        font-size: 55px
+        font-size: 55px;        
+       top:10%
     }
 
     .intro--banner img {
@@ -854,6 +855,7 @@ filter: brightness(2);
     .intro--banner h1 {
         font-size: 45px;
         margin-top: 10rem;
+        top:10%;
         text-align: center;
     }
 
@@ -895,7 +897,7 @@ margin-top: 5%;
         margin-top: 7;
         padding-top: 20px;
         padding-right: 30px;
-        font-size: 60px;
+        font-size: 60px;top:10%
     }
     .intro--line{
         padding-bottom: 20px;
