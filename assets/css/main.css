@@ -783,7 +783,7 @@ body {
 .intro--banner img {
     position: absolute;
     bottom: 21px;
-filter: brightness(1.75);
+filter: brightness(2);
     right: -12px
 }
 
@@ -839,6 +839,11 @@ filter: brightness(1.75);
     .intro--options {
         display: none;
     }
+    .intro--banner::before,
+    .intro--banner::after {
+        display: none
+    }
+
 }
 
 @media (max-width: 767px) {
@@ -847,12 +852,15 @@ filter: brightness(1.75);
     }
 
     .intro--banner h1 {
-        font-size: 44px;
+        font-size: 45px;
         margin-top: 10rem;
+        text-align: center;
     }
 
     .intro--banner img {
-        width: 450px;
+        width: 700px;
+top: -425px;;
+        filter: brightness(2);
         
     }
     .intro--line{
@@ -875,23 +883,26 @@ margin-top: 5%;
     .intro--options>a:last-child {
         margin-bottom: 0
     }
+    .intro--banner::before,
+    .intro--banner::after {
+        display: none
+    }
+
 }
 
-@media (max-width: 600px) {
-    .intro--banner {
-        height: 360px
+@media (max-width: 620px){
+ .intro--banner h1 {
+        margin-top: 7;
+        padding-top: 20px;
+        padding-right: 30px;
+        font-size: 60px;
     }
-
-    .intro--banner h1 {
-        font-size: 55px
-    }
-
-    *.intro--banner img {
-
+    .intro--line{
+        padding-bottom: 20px;
     }
 }
 
-@media (max-width: 600px) and (max-height: 750px) {
+@media (max-width: 650px) and (max-height: 750px) {
     .intro--banner {
         height: auto
     }
@@ -901,9 +912,7 @@ margin-top: 5%;
         display: none
     }
 
-    .intro--banner h1 {
-        margin-top: 0
-    }
+   
 
     .intro--options {
         display: none
@@ -1182,7 +1191,7 @@ margin-top: 5%;
 
 .about--banner h2 {
     position: relative;
-    margin-top: 35px;
+    margin-top: 75px;
     font-size: 68px;
     font-weight: 900;
     line-height: 1;
@@ -1192,11 +1201,11 @@ margin-top: 5%;
 .about--banner h2::before {
     content: "";
     position: absolute;
-    top: 60px;
+    top: 20px;
     left: 268px;
     width: 30px;
     height: 30px;
-    background-color: #0f33ff;
+    background-color: cyan;
     border-radius: 50%
 }
 
@@ -1207,7 +1216,7 @@ margin-top: 5%;
     left: 255px;
     width: 10px;
     height: 10px;
-    background-color: #0f33ff
+    background-color: #FF6EC7;
 }
 
 .about--banner a {
@@ -1234,8 +1243,9 @@ margin-top: 5%;
 
 .about--banner img {
     position: absolute;
-    bottom: -90px;
-    right: -12px
+    bottom: 30px;
+   right: -42px;
+  transform: translateX(30%);
 }
 
 .about--options {
@@ -1340,7 +1350,7 @@ margin-top: 5%;
     }
 
     .about--banner h2 {
-        margin-top: 0;
+        margin-top: 0%;
         font-size: 55px
     }
 
@@ -1877,4 +1887,28 @@ margin-top: 5%;
 .outer-nav li.is-vis:nth-child(5) {
     -webkit-transition-delay: .16s;
     transition-delay: .16s
+}
+
+@media (max-width: 414px){
+    .intro--line img{
+        width: 450px;
+        margin-top: 200px;
+    }
+     .intro--banner h1 {
+         margin-top:  -50px;
+         font-size: 50px;
+        padding-top:  50px;
+     }
+}
+
+@media (max-width: 380px){
+    .intro--line img{
+        width: 400px;
+        margin-top: 230px;
+    }
+     .intro--banner h1 {
+         margin-top:  0px;
+         font-size: 40px;
+        padding-top:  20px;
+     }
 }
