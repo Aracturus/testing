@@ -6,6 +6,7 @@
     font-style: normal
 }
 
+
 @font-face {
     font-family: 'Montserrat';
     src: url("fonts/Montserrat-Bold.eot");
@@ -1214,8 +1215,8 @@ margin-top: 5%;
 .about--banner h2::after {
     content: "";
     position: absolute;
-    top: 255px;
-    left: 255px;
+    top: 155px;
+    left: 405px;
     width: 10px;
     height: 10px;
     background-color: #FF6EC7;
@@ -1224,21 +1225,34 @@ margin-top: 5%;
 .about--banner a {
     padding: 5px 17px 5px 0;
     text-decoration: none;
-    color: #fff;
+    color: #FF6EC7;
     font-weight: 700;
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-transform: uppercase;
     background-color: transparent
 }
+.about--banner a:hover{
+-webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 17% 51%, 0% 0%);
+clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 17% 51%, 0% 0%);
 
+color: whitesmoke;
+background: #1D64CF;
+background: -webkit-linear-gradient(to top left, #1D64CF 39%, #29CFCF 100%);
+background: -moz-linear-gradient(to top left, #1D64CF 39%, #29CFCF 100%);
+background: linear-gradient(to top left, #1D64CF 39%, #29CFCF 100%);
+padding: 10px 60px ;
+}
 .about--banner a:hover svg {
-    left: 10px
+    left: 10px;
+   
 }
 
 .about--banner a svg {
     position: relative;
     left: 5px;
     width: 15px;
-    fill: #fff;
+    fill: cyan;
     -webkit-transition: left .2s ease-in-out;
     transition: left .2s ease-in-out
 }
@@ -1699,8 +1713,23 @@ margin-top: 5%;
     .work-request--options {
         margin: 20px 0
     }
-}
 
+.about--banner p{
+display: none;
+}
+.about--banner h2{
+     top: 180px;
+text-align: center;
+font-size: 74px;
+}
+.about--banner h2::before {
+top: 50px;
+left: 30px;
+}
+.about--banner h2::after {
+    top: 180px;
+left: 70px;
+}}
 @media (max-width: 600px) and (max-width: 415px) {
     .work-request--options {
         -webkit-box-pack: justify;
