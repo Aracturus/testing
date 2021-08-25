@@ -1713,12 +1713,15 @@ padding: 10px 60px ;
     .work-request--options {
         margin: 20px 0
     }
-
+.about--banner a {
+    top: -20px;
+    left: -20px;
+}
 .about--banner p{
 display: none;
 }
 .about--banner h2{
-     top: 180px;
+     top: 10px;
 text-align: center;
 font-size: 74px;
 }
@@ -1729,7 +1732,20 @@ left: 30px;
 .about--banner h2::after {
     top: 180px;
 left: 70px;
-}}
+}
+.about--banner button{
+  visibility: inherit;
+  -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 17% 51%, 0% 0%);
+clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 17% 51%, 0% 0%);
+
+color: whitesmoke;
+background: #1D64CF;
+background: -webkit-linear-gradient(to top left, #1D64CF 39%, #29CFCF 100%);
+background: -moz-linear-gradient(to top left, #1D64CF 39%, #29CFCF 100%);
+background: linear-gradient(to top left, #1D64CF 39%, #29CFCF 100%);
+padding: 10px 60px ;
+}
+}
 @media (max-width: 600px) and (max-width: 415px) {
     .work-request--options {
         -webkit-box-pack: justify;
