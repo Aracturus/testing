@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Global</title>
+  <title>AntEagle</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,267 +9,124 @@
   <meta name="keywords" content="global, template, html, sass, jquery">
   <meta name="author" content="Bucky Maler">
   <link rel="stylesheet" href="assets/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 </head>
 <style>
-.pie-container {
-  transition: padding 0.7s ease;
-  padding: 10px 13%;
+  #chartdiv {
+	width		: 100%;
+	height		: 435px;
+	font-size	: 21px;
+  margin-left: 40%;
+  margin-top: -40%;
+}	
+
+
+
+.containez {
+  width: 390px;
+  height: 549px;
+  background: #000;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 11px;
+  -webkit-box-shadow: 0px 0px 114px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 114px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 114px 2px rgba(0, 0, 0, 0.75);
+}
+.containez svg {
+  position: absolute;
 }
 
-#pieChart {
-  max-width: none !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  counter-reset: break-point 80;
+.rect1 {
+  z-index: 1;
+  stroke-dasharray: 197 509;
+  stroke-dashoffset: -729;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-#pieChart svg {
-  overflow: visible;
-  transition: width 0.7s ease;
+
+.rect2 {
+  z-index: 1;
+  stroke-dasharray: 197 509;
+  stroke-dashoffset: -1058;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-#pieChart path {
+
+.text {
+  position: absolute;
+  margin-top: 254px;
+  border: none;
+  background: #000;
+  margin-left: 101px;
+  color: gray;
+  width: 196px;
+  height: 44px;
+  padding-left: 3px;
+  z-index: 100;
+  font-family: "Roboto", sans-serif;
+  padding-top: 21px;
+  transition: all 600ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+.text:focus {
+  outline-width: 0;
+  font-size: 16px;
+}
+
+.pass {
+  position: absolute;
+  margin-top: 305px;
+  border: none;
+  background: black;
+  margin-left: 101px;
+  color: gray;
+  width: 196px;
+  height: 44px;
+  padding-left: 3px;
+  z-index: 100;
+  font-family: "Roboto", sans-serif;
+  padding-top: 21px;
+  transition: all 600ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+.pass:focus {
+  outline-width: 0;
+  font-size: 16px;
+}
+
+ .containez button {
+  position: absolute;
+  z-index: 100;
+  width: 149px;
+  height: 43px;
+  border: 1px solid #fff;
+  background: #000;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 22px;
+  margin-top: 421px;
+  margin-left: 120.5px;
+  transition: 0.5s;
   cursor: pointer;
 }
-
-#pieText {
-  overflow: visible;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.containez button:hover {
+  color: #000;
+  background: #fff;
 }
-#pieText .panel {
-  background-color: #111;
-  border: groove 4px #222;
-  box-shadow: 8px 10px 20px #000, 4px 5px 25px #000;
-  width: 100%;
-  height: 60%;
-  border-radius: 7px;
-  padding: 0 3px;
-  float: left;
-  transition: height 0.7s ease, padding 0.7s ease;
-  perspective: 650px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.containez button:focus {
+  outline-width: 0;
 }
 
-.content-wrapper {
-  overflow: hidden;
-  transform-style: preserve-3d;
-}
 
-#segmentTitle, #segmentText {
-  text-shadow: 1px 1px 3px #000, 1px 1px 3px #000;
+
+.info {
+  position: absolute;
   text-align: center;
-}
-
-#segmentTitle {
-  transition: padding 0.7s ease;
-  padding: 20px;
-  font-size: calc( 19px + (35 - 19) * (100vw - 200px) / (1314 - 200));
-}
-@media screen and (max-width: 200px) {
-  #segmentTitle {
-    font-size: 19px;
-  }
-}
-@media screen and (min-width: 1314px) {
-  #segmentTitle {
-    font-size: 35px;
-  }
-}
-
-#segmentText {
-  width: 100%;
-  transition: padding 0.7s ease, line-height 0.7s ease;
-  padding: 15px 20px 20px;
-  font-size: calc( 14px + (21 - 14) * (100vw - 200px) / (1314 - 200));
-  line-height: 28px;
-}
-@media screen and (max-width: 200px) {
-  #segmentText {
-    font-size: 14px;
-  }
-}
-@media screen and (min-width: 1314px) {
-  #segmentText {
-    font-size: 21px;
-  }
-}
-
-@media (max-width: 360px) {
-  div.pie-container {
-    padding: 10px 12%;
-  }
-  div.pie-container #pieChart {
-    counter-reset: break-point 40;
-  }
-  div.pie-container #pieChart svg {
-    width: 100%;
-  }
-  div.pie-container #pieText {
-    margin-top: 15px;
-  }
-  div.pie-container #pieText .panel {
-    height: 230px;
-    padding: 0;
-  }
-  div.pie-container #pieText .panel #segmentTitle {
-    padding: 2px 4px 4px;
-  }
-  div.pie-container #pieText .panel #segmentText {
-    padding: 2px 4px 4px;
-    line-height: 16px;
-  }
-}
-@media (min-width: 360.02px) and (max-width: 442px) {
-  div.pie-container {
-    padding: 10px 10%;
-  }
-  div.pie-container #pieChart {
-    counter-reset: break-point 53;
-  }
-  div.pie-container #pieChart svg {
-    width: 70%;
-  }
-  div.pie-container #pieText {
-    margin-top: 15px;
-  }
-  div.pie-container #pieText .panel {
-    height: 210px;
-    padding: 0;
-  }
-  div.pie-container #pieText .panel #segmentTitle {
-    padding: 4px;
-  }
-  div.pie-container #pieText .panel #segmentText {
-    padding: 4px;
-    line-height: 18px;
-  }
-}
-@media (min-width: 442.02px) and (max-width: 575.98px) {
-  div.pie-container {
-    padding: 10px 10%;
-  }
-  div.pie-container #pieChart {
-    counter-reset: break-point 60;
-  }
-  div.pie-container #pieChart svg {
-    width: 70%;
-  }
-  div.pie-container #pieText {
-    margin-top: 15px;
-  }
-  div.pie-container #pieText .panel {
-    height: 200px;
-    padding: 0;
-  }
-  div.pie-container #pieText .panel #segmentTitle {
-    padding: 4px;
-  }
-  div.pie-container #pieText .panel #segmentText {
-    padding: 0 4px 4px;
-    line-height: 21px;
-  }
-}
-@media (min-width: 576px) and (max-width: 637.98px) {
-  div.pie-container {
-    padding: 10px 12%;
-  }
-  div.pie-container #pieChart {
-    counter-reset: break-point 70;
-  }
-  div.pie-container #pieChart svg {
-    width: 60%;
-  }
-  div.pie-container #pieText {
-    margin-top: 20px;
-  }
-  div.pie-container #pieText .panel {
-    padding: 0;
-    height: 205px;
-  }
-  div.pie-container #pieText .panel #segmentTitle {
-    padding: 8px;
-  }
-  div.pie-container #pieText .panel #segmentText {
-    padding: 0 8px 8px;
-    line-height: 24px;
-  }
-}
-@media (min-width: 638px) and (max-width: 767px) {
-  div.pie-container {
-    padding: 10px 15%;
-  }
-  div.pie-container #pieChart {
-    counter-reset: break-point 80;
-  }
-  div.pie-container #pieChart svg {
-    width: 60%;
-  }
-  div.pie-container #pieText {
-    margin-top: 20px;
-  }
-  div.pie-container #pieText .panel {
-    padding: 0 3px;
-    height: 270px;
-  }
-  div.pie-container #pieText .panel #segmentTitle {
-    padding: 15px;
-  }
-  div.pie-container #pieText .panel #segmentText {
-    padding: 15px;
-    line-height: 27px;
-  }
-}
-@media (min-width: 767.02px) and (max-width: 965px) {
-  div.pie-container {
-    padding: 10px 4%;
-  }
-  div.pie-container #pieChart {
-    counter-reset: break-point 50;
-  }
-  div.pie-container #pieText .panel {
-    height: 82%;
-    padding: 0;
-  }
-  div.pie-container #pieText .panel #segmentTitle {
-    padding: 8px;
-  }
-  div.pie-container #pieText .panel #segmentText {
-    padding: 0 8px 8px;
-    line-height: 23px;
-  }
-}
-@media (min-width: 965.02px) and (max-width: 1314px) {
-  div.pie-container {
-    padding: 10px 5%;
-  }
-  div.pie-container #pieChart {
-    counter-reset: break-point 60;
-  }
-  div.pie-container #pieText .panel {
-    height: 70%;
-  }
-  div.pie-container #pieText .panel #segmentTitle {
-    padding: 10px;
-  }
-  div.pie-container #pieText .panel #segmentText {
-    padding: 5px 10px 10px;
-  }
-}
-@media (min-width: 1314.02px) and (max-width: 1480px) {
-  div.pie-container {
-    padding: 10px 8%;
-  }
-  div.pie-container #pieChart {
-    counter-reset: break-point 70;
-  }
-  div.pie-container #pieText .panel #segmentText {
-    padding-top: 10px;
-  }
+  font-family: "Roboto", sans-serif;
+  color: #BDFFBD;
+  font-size: 14px;
+  margin-left: 125px;
+  margin-top: 181px;
 }
 </style>
 <body>
@@ -304,7 +161,7 @@
             <li><span>Staking</span></li>
             <li><span>Insurance</span></li>
             <li><span>Roadmap</span></li>
-            <li><span>Contact Us</span></li>
+            <li><span>Tokenomics</span></li> <li><span>Contact Us</span></li>
           </ul>
         </nav>
         <ul class="l-main-content main-content">
@@ -312,7 +169,7 @@
             <div class="intro">
               <div class="intro--banner">
                 <h1 style="transform: translateY(60%);margin-left: 5%;" >Welcome
-                 to<br> Antnet<br>Ecosystem</h1>
+                 to<br>Antnet<br>Ecosystem</h1>
                <div class="intro--line">
                 <img src="assets/img/i.png" alt="Welcome"  style="transform: translateX(15%);mix-blend-mode: multiply;">
                </div>
@@ -482,32 +339,46 @@ Relax and invest<br> with no worries of lossing your hard-earned money.
             </div>
           </li>
           <li class="l-section section">
-                 <div class="pie-container">
-  <div class="row">
-    <div class="col-md-5" id="pieChart"></div>
-    <div id="pieText" class="col-md-7 text-container">
-      <div class="panel">
-        <div class="content-wrapper">
-          <h1 id="segmentTitle">Select Fragment</h1>
-          <p id="segmentText">Detailed information about internal systems and business operations.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>     <div class="pie-container">
-  <div class="row">
-    <div class="col-md-5" id="pieChart"></div>
-    <div id="pieText" class="col-md-7 text-container">
-      <div class="panel">
-        <div class="content-wrapper">
-          <h1 id="segmentTitle">Select Fragment</h1>
-          <p id="segmentText">Detailed information about internal systems and business operations.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-          </li>
+            <div class="about">
+              <div class="about--banner">
+                <h2>Token<br>Distribution</h2>
+               
+                <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight: lighter;">
+               Feeling struck ?<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                
+              <br> <br>  <br>
+                <div id="chartdiv"></div>
+              </div> </div>
+
+																								
+
+            </li>
+
+              <li class="l-section section">
+<div class="contact">
+              <div class="contact--lockup">
+                <div class="modal">
+                  
+                  
+
+                 
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+              </li>
+
+
         </ul>
       
 
@@ -521,344 +392,93 @@ Relax and invest<br> with no worries of lossing your hard-earned money.
             <li>Staking</li>
             <li>Insurance</li>
             <li>Roadmap</li>
-            <li>Contact Us</li>
+            <li>Tokenomics</li>
+               <li>Contact Us</li>
   </ul>
 </div>
 
 
 
+<script>
+  let rect = document.getElementById("rect");
+let username = document.getElementById("username");
+let password = document.getElementById("password");
 
+function handle1() {
+	rect.setAttribute("class", "rect2");
+}
+
+function handle2() {
+	rect.setAttribute("class", "rect1");
+}
+
+//For codepen header!!!
+setTimeout(() => {
+	password.focus();
+}, 500);
+
+setTimeout(() => {
+	username.focus();
+}, 1500);
+
+</script>
+
+
+  <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/pie.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
 
 <script>
-
-
-// Credit to Alan at https://codepen.io/amwill04/pen/NGmjyr
-
-// When on tablet or phone, initially run or restart the pen from under 767px screen width so that the angle of the selected pie slice animates down instead of to the right when the description box is underneath it.
-
-var data = [
-  {
-    Title: "HTML",
-    Amount: 100,
-    Description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent rutrum metus vel odio convallis condimentum. Integer ullamcorper ipsum vel dui varius congue. Nulla facilisi. Morbi molestie tortor libero, ac placerat urna mollis ac. Vestibulum id ipsum mauris."
-  },
-  {
-    Title: "CSS",
-    Amount: 1000,
-    Description:
-      "In hac habitasse platea dictumst. Curabitur lacus neque, congue ac quam a, sagittis accumsan mauris. Suspendisse et nisl eros. Fusce nulla mi, tincidunt non faucibus vitae, aliquam vel dolor. Maecenas imperdiet, elit eget condimentum fermentum, sem lorem fringilla felis, vitae cursus lorem elit in risus."
-  },
-  {
-    Title: "Javascript",
-    Amount: 1750,
-    Description:
-      "Aenean faucibus, risus sed eleifend rutrum, leo diam porttitor mauris, a eleifend ipsum ipsum ac ex. Nam scelerisque feugiat augue ac porta. Morbi massa ante, interdum sed nulla nec, finibus cursus augue. Phasellus nunc neque, blandit a nunc ut, mattis elementum arcu."
-  },
-  {
-    Title: "JSON",
-    Amount: 600,
-    Description:
-      "Laboriosam pariatur recusandae ipsum nisi, saepe doloremque nobis eaque omnis commodi dolor porro? Error, deserunt veritatis officiis porro libero et suscipit ad. Ipsum dolor sit amet consectetur adipisicing elit."
-  },
-  {
-    Title: "React JSX",
-    Amount: 2000,
-    Description:
-      "Sit amet consectetur adipisicing elit. Nemo totam perspiciatis tenetur quod ipsam voluptas et consequatur labore harum obcaecati alias voluptate id sit, praesentium ratione nostrum maxime reprehenderit. Deserunt veritatis officiis porro libero et suscipit ad."
-  },
-  {
-    Title: "WebGL",
-    Amount: 100,
-    Description:
-      "Consectetur adipisicing elit. Architecto illum quidem eligendi, consectetur corporis esse enim eveniet distinctio beatae dignissimos recusandae, ipsam aspernatur labore cupiditate, suscipit corrupti accusantium voluptates laborum."
-  },
-  {
-    Title: "Express",
-    Amount: 750,
-    Description:
-      "Beatae, aperiam voluptas aut atque laborum dolorem fuga. Corporis aperiam, illo nobis suscipit perferendis natus doloremque id ratione modi, veritatis beatae maiores Lorem ipsum dolor sit, amet consectetur."
-  },
-  {
-    Title: "Pug",
-    Amount: 400,
-    Description:
-      "Amet consectetur, adipisicing elit. Ipsum perferendis rem illo explicabo voluptate, voluptatum id expedita sapiente magni laboriosam maiores molestiae ut accusamus impedit quos ex excepturi porro voluptates. Nunc dolor metus, aliquam vitae felis id, euismod vulputate metus."
-  },
-  {
-    Title: "Sass",
-    Amount: 800,
-    Description:
-      "Architecto illum quidem eligendi, consectetur corporis esse enim eveniet distinctio beatae dignissimos recusandae, ipsam aspernatur labore cupiditate, suscipit corrupti accusantium voluptates laborum."
-  },
-  {
-    Title: "MongoDB",
-    Amount: 450,
-    Description:
-      "Dolor sit amet consectetur adipisicing elit. Beatae, aperiam. Voluptas aut atque laborum dolorem fuga? Corporis aperiam, illo nobis suscipit perferendis natus doloremque id ratione modi, veritatis beatae maiores."
-  },
-  {
-    Title: "Bootstrap",
-    Amount: 450,
-    Description:
-      "Recusandae ipsum nisi, saepe doloremque nobis eaque omnis commodi dolor porro? Error, deserunt veritatis officiis porro libero et suscipit ad. Dolor sit amet consectetur adipisicing elit. Nemo totam perspiciatis tenetur quod ipsam voluptas et consequatur labore harum obcaecati alias voluptate."
+  var chart = AmCharts.makeChart( "chartdiv", {
+  "type": "pie",
+  "theme": "light",
+  "dataProvider": [ {
+    "country": "Lithuania",
+    "value": 260
+  }, {
+    "country": "Ireland",
+    "value": 201
+  }, {
+    "country": "Germany",
+    "value": 65
+  }, {
+    "country": "Australia",
+    "value": 39
+  }, {
+    "country": "UK",
+    "value": 19
+  }, {
+    "country": "Latvia",
+    "value": 10
+  } ],
+  "valueField": "value",
+  "titleField": "country",
+  "outlineAlpha": 0.4,
+  "depth3D": 15,
+  "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+  "angle": 30,
+  "export": {
+    "enabled": true
   }
-];
+} );
+jQuery( '.chart-input' ).off().on( 'input change', function() {
+  var property = jQuery( this ).data( 'property' );
+  var target = chart;
+  var value = Number( this.value );
+  chart.startDuration = 0;
 
-var width = parseInt(d3.select("#pieChart").style("width"), 10);
-var height = width;
-var radius = (Math.min(width, height) - 15) / 2;
-
-var total = 0; // used to calculate %s
-data.forEach((d) => {
-  total += d.Amount;
-});
-
-var title = function getObject(obj) {
-  titles = [];
-  for (var i = 0; i < obj.length; i++) {
-    titles.push(obj[i].Title);
-  }
-  return titles;
-};
-
-// grabs the responsive value in 'counter-reset' css value
-let innerRadius = $("#pieChart").css("counter-reset").split(" ")[1];
-
-var arcOver = d3
-  .arc()
-  .outerRadius(radius + 10)
-  .innerRadius(innerRadius);
-
-var color = d3.scaleOrdinal();
-color
-  .domain(title(data))
-  // Comment in/out between ranges below to change colors
-  .range(["#2BDFBB", "#DF2B4F", "#EE6617", "#FFBF00", "#423E6E", "#E24161"]);
-//.range(["#FFFFFF", "#0057E7", "#D62D20", "#008744", "#FFA700", "#0057E7"]);
-//.range(["#011F4B", "#03396C", "#005B96", "#6497B1", "#B3CDE0"]);
-//.range(["#B2D8D8", "#66B2B2", "#008080", "#006666", "#004C4C"]);
-//.range(["#DC6900", "#EB8C00", "#E0301E", "#A32020", "#602320"]);
-//.range(["#D11141", "#00B159", "#00AEDB", "#FFC425", "#F37735"]);
-//.range(["#BD0C2F", "#D15238", "#4F283D", "#17263E", "#345999"]);
-//.range(["#FE0000", "#FDFE02", "#0BFF01", "#011EFE", "#FE00F6"]);
-//.range(['#0B00FF', '#0097FF', '#00FFF0', '#00FF74', '#0BFF00', '#FFF900', '#FF5500', '#FF0500', '#FF007F', '#B800FF', '#99FF00']);
-//.range(["#8A76A6", "#54B5BF", "#8EA65B", "#F27B35"]);
-
-// Comment Out Below to Use Diff D3 Color Scheme
-// var color = d3.scaleOrdinal(d3.schemeCategory10);
-// color.domain(title(data))
-
-var arc = d3
-  .arc()
-  .outerRadius(radius - 10)
-  .innerRadius(innerRadius);
-
-var pie = d3
-  .pie()
-  .sort(null)
-  .value(function (d) {
-    return +d.Amount;
-  });
-
-// direction of the slice angle (for responsiveness)
-let sliceDirection = 90;
-if (window.matchMedia("(max-width: 767px)").matches) {
-  sliceDirection = 180;
-}
-
-var prevSegment = null;
-var change = function (d, i) {
-  var angle =
-    sliceDirection -
-    (d.startAngle * (180 / Math.PI) +
-      ((d.endAngle - d.startAngle) * (180 / Math.PI)) / 2);
-
-  svg
-    .transition()
-    .duration(1000)
-    .attr(
-      "transform",
-      "translate(" + radius + "," + height / 2 + ") rotate(" + angle + ")"
-    );
-  d3.select(prevSegment).transition().attr("d", arc).style("filter", "");
-  prevSegment = i;
-
-  d3.select(i)
-    .transition()
-    .duration(1000)
-    .attr("d", arcOver)
-    .style("filter", "url(#drop-shadow)");
-};
-
-var svg = d3
-  .select("#pieChart")
-  .append("svg")
-  .attr("width", "100%")
-  .attr("height", "100%")
-  .attr(
-    "viewBox",
-    "0 0 " + Math.min(width, height) + " " + Math.min(width, height)
-  )
-  .attr("preserveAspectRatio", "xMinYMin")
-  .append("g")
-  .attr("transform", "translate(" + radius + "," + height / 2 + ")")
-  .style("filter", "url(#drop-shadow)");
-
-// Create Drop Shadow on Pie Chart
-var defs = svg.append("defs");
-var filter = defs
-  .append("filter")
-  .attr("id", "drop-shadow")
-  .attr("height", "130%");
-
-filter
-  .append("feGaussianBlur")
-  .attr("in", "SourceAlpha")
-  .attr("stdDeviation", 5.5)
-  .attr("result", "blur");
-
-filter
-  .append("feOffset")
-  .attr("in", "blur")
-  .attr("dx", 0)
-  .attr("dy", 0)
-  .attr("result", "offsetBlur");
-
-var feMerge = filter.append("feMerge");
-feMerge.append("feMergeNode").attr("in", "offsetBlur");
-feMerge.append("feMergeNode").attr("in", "SourceGraphic");
-
-// toggle to allow animation to halfway finish before switching segment again
-var buttonToggle = true;
-var switchToggle = () => {
-  setTimeout(() => {
-    buttonToggle = true;
-  }, 1500);
-};
-
-var timeline = new TimelineLite();
-
-var g = svg
-  .selectAll("path")
-  .data(pie(data))
-  .enter()
-  .append("path")
-  .style("fill", function (d) {
-    return color(d.data.Title);
-  })
-  .attr("d", arc)
-  .style("fill", function (d) {
-    return color(d.data.Title);
-  })
-  .on("click", function (d) {
-    if (buttonToggle) {
-      buttonToggle = false;
-      switchToggle();
-
-      change(d, this);
-
-      var timeline = new TimelineLite();
-
-      //TweenMax.set(".panel", {perspective:800});
-      //TweenMax.set(".content-wrapper", {transformStyle:"preserve-3d"});
-
-      timeline
-        .to(".content-wrapper", 0.5, {
-          rotationX: "90deg",
-          opacity: 0,
-          ease: Linear.easeNone,
-          onComplete: () => {
-            $(".content-wrapper").hide();
-          }
-        })
-        .to(".panel", 0.5, {
-          width: "0%",
-          opacity: 0.05,
-          ease: Linear.easeNone,
-          onComplete: () => {
-            $("#segmentTitle").replaceWith(
-              `<h1 id="segmentTitle">${d.data.Title} - ${
-                Math.round((d.data.Amount / total) * 1000) / 10
-              }%</h1>`
-            );
-            $("#segmentText").replaceWith(
-              '<p id="segmentText">' + d.data.Description + "</p>"
-            );
-            $(".panel").css(
-              "background-color",
-              `${ColorLuminance(color(d.data.Title), -0.3)}`
-            );
-          }
-        });
-
-      timeline
-        .to(".panel", 0.5, {
-          width: "100%",
-          opacity: 1,
-          ease: Linear.easeNone,
-          onComplete: () => {
-            $(".content-wrapper").show();
-          }
-        })
-        .to(".content-wrapper", 0.5, {
-          rotationX: "0deg",
-          opacity: 1,
-          ease: Linear.easeNone
-        });
-    }
-  });
-
-timeline
-  .from("#pieChart", 0.5, {
-    rotation: "-120deg",
-    scale: 0.1,
-    opacity: 0,
-    ease: Power3.easeOut
-  })
-  .from(
-    ".panel",
-    0.75,
-    {
-      width: "0%",
-      opacity: 0,
-      ease: Linear.easeNone,
-      onComplete: () => {
-        $(".content-wrapper").show();
-      }
-    },
-    "+=.55"
-  )
-  .from(".content-wrapper", 0.75, {
-    rotationX: "-90deg",
-    opacity: 0,
-    ease: Linear.easeNone
-  });
-
-// Function to darken Hex colors
-function ColorLuminance(hex, lum) {
-  // validate hex string
-  hex = String(hex).replace(/[^0-9a-f]/gi, "");
-  if (hex.length < 6) {
-    hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
-  }
-  lum = lum || 0;
-
-  // convert to decimal and change luminosity
-  var rgb = "#",
-    c,
-    i;
-  for (i = 0; i < 3; i++) {
-    c = parseInt(hex.substr(i * 2, 2), 16);
-    c = Math.round(Math.min(Math.max(0, c + c * lum), 255)).toString(16);
-    rgb += ("00" + c).substr(c.length);
+  if ( property == 'innerRadius' ) {
+    value += "%";
   }
 
-  return rgb;
-}
+  target[ property ] = value;
+  chart.validateNow();
+} );
+</script>
 
-//document.querySelector('style').textContent += '@media(max-width:767px) {#pieChart { transform: rotate(90deg); transform-origin: 50% 50%; transition: 1s; max-width: 50%; } .text-container { width: 100%; min-height: 0; }} @media(min-width:768px) {#pieChart { transition: 1s;}}'
-</scriptt>
+<!------ Include the above in your HEAD tag ---------->
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 <script src="assets/js/functions-min.js"></script>

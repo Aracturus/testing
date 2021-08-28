@@ -1390,12 +1390,15 @@ padding: 10px 60px ;
 }
 
 .contact {
-    position: fixed;
-    top: 0;
-    left: 0;
+    
+   padding-bottom:5%;
+    padding-right:10%;
     width: 100%;
     height: 100%;
-    background-image: url("../img/contact-visual.png");
+    padding-left:10%;
+padding-top:5%;
+
+    background-image: url("../img/grayscale-vector-worldmap.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat
