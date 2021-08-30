@@ -1870,7 +1870,7 @@ padding: 10px 60px ;
     transform-style: preserve-3d;
     -webkit-transform: translateX(350px) translateZ(-1000px);
     transform: translateX(350px) translateZ(-1000px);
-    font-size: 55px;
+    font-size: 45px;
     font-weight: 900;
     opacity: 0;
     cursor: pointer;
