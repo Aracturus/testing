@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>AntEagle</title>
+  <title>Iconmedia House</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,252 +9,12 @@
   <meta name="keywords" content="global, template, html, sass, jquery">
   <meta name="author" content="Bucky Maler">
   <link rel="stylesheet" href="assets/css/main.css">
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="assets/css/section.css">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" 
+  rel="stylesheet" id="bootstrap-css">
 </head>
 <style>
-  #chartdiv {
-	width		: 100%;
-	height		: 435px;
-	font-size	: 21px;
-  margin-left: 40%;
-  margin-top: -40%;
-}	
 
-  #chartdiv1 {
-	width		: 100%;
-	height		: 435px;
-	font-size	: 21px;
-  margin-left: 10%;
-  margin-top: -60%;
-}	
-  #chartdiv2{
-	width		: 100%;
-	height		: 435px;
-	font-size	: 21px;
-  margin-left: 20%;
-  margin-top: -80%;
-}	
-
-
-.containez {
-  width: 390px;
-  height: 549px;
-  background: #000;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 11px;
-  -webkit-box-shadow: 0px 0px 114px 2px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 114px 2px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 114px 2px rgba(0, 0, 0, 0.75);
-}
-.containez svg {
-  position: absolute;
-}
-
-.rect1 {
-  z-index: 1;
-  stroke-dasharray: 197 509;
-  stroke-dashoffset: -729;
-  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
-  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.rect2 {
-  z-index: 1;
-  stroke-dasharray: 197 509;
-  stroke-dashoffset: -1058;
-  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
-  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.text {
-  position: absolute;
-  margin-top: 254px;
-  border: none;
-  background: #000;
-  margin-left: 101px;
-  color: gray;
-  width: 196px;
-  height: 44px;
-  padding-left: 3px;
-  z-index: 100;
-  font-family: "Roboto", sans-serif;
-  padding-top: 21px;
-  transition: all 600ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-}
-.text:focus {
-  outline-width: 0;
-  font-size: 16px;
-}
-
-.pass {
-  position: absolute;
-  margin-top: 305px;
-  border: none;
-  background: black;
-  margin-left: 101px;
-  color: gray;
-  width: 196px;
-  height: 44px;
-  padding-left: 3px;
-  z-index: 100;
-  font-family: "Roboto", sans-serif;
-  padding-top: 21px;
-  transition: all 600ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-}
-.pass:focus {
-  outline-width: 0;
-  font-size: 16px;
-}
-
- .containez button {
-  position: absolute;
-  z-index: 100;
-  width: 149px;
-  height: 43px;
-  border: 1px solid #fff;
-  background: #000;
-  font-family: "Roboto", sans-serif;
-  color: #fff;
-  font-size: 16px;
-  border-radius: 22px;
-  margin-top: 421px;
-  margin-left: 120.5px;
-  transition: 0.5s;
-  cursor: pointer;
-}
-.containez button:hover {
-  color: #000;
-  background: #fff;
-}
-.containez button:focus {
-  outline-width: 0;
-}
-
-
-
-.info {
-  position: absolute;
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  color: #BDFFBD;
-  font-size: 14px;
-  margin-left: 125px;
-  margin-top: 181px;
-}
-
-
-
-/* ///// inputs /////*/
-
-input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
-    font-size: 0.75em;
-    color: #999;
-    top: -5px;
-    -webkit-transition: all 0.225s ease;
-    transition: all 0.225s ease;
-}
-
-.styled-input {
-    float: left;
-    width: 293px;
-    margin: 1rem 0;
-    position: relative;
-    border-radius: 4px;
-}
-
-@media only screen and (max-width: 768px){
-    .styled-input {
-        width:100%;
-    }
-}
-
-.styled-input label {
-    color: #999;
-    padding: 1.3rem 30px 1rem 30px;
-    position: absolute;
-    top: 10px;
-    left: 0;
-    -webkit-transition: all 0.25s ease;
-    transition: all 0.25s ease;
-    pointer-events: none;
-}
-
-.styled-input.wide { 
-    width: 650px;
-    max-width: 100%;
-}
-
-input,
-textarea {
-    padding: 30px;
-    border: 0;box-shadow: 10px 8px 9px 3px rgba(255, 255, 255, 0.77);
-    width: 100%;
-    font-size: 1rem;
-    background-color: #2d2d2d;
-    color: white;
-    border-radius: 4px;
-}
-
-input:focus,
-textarea:focus { outline: 0; }
-
-input:focus ~ span,
-textarea:focus ~ span {
-    width: 100%;
-    -webkit-transition: all 0.075s ease;
-    transition: all 0.075s ease;
-}
-
-textarea {
-    width: 100%;
-    min-height: 7em;
-}
-
-.input-container {
-    width: 650px;
-    max-width: 100%;
-    margin: 20px auto 25px auto;
-}
-
-.submit-btn {
-    float: right;
-    padding: 7px 35px;
-    border-radius: 60px;
-    display: inline-block;
-    background-color: #4b8cfb;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.06),
-              0 2px 10px 0 rgba(0,0,0,0.07);
-    -webkit-transition: all 300ms ease;
-    transition: all 300ms ease;
-}
-
-.submit-btn:hover {
-    transform: translateY(1px);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10),
-              0 1px 1px 0 rgba(0,0,0,0.09);
-}
-
-@media (max-width: 768px) {
-    .submit-btn {
-        width:100%;
-        float: none;
-        text-align:center;
-    }
-}
-
-input[type=checkbox] + label {
-  color: #ccc;
-  font-style: italic;
-} 
-
-input[type=checkbox]:checked + label {
-  color: #f00;
-  font-style: normal;
-}
 </style>
 <body>
 
@@ -274,9 +34,15 @@ input[type=checkbox]:checked + label {
         <header class="header">
           <a class="header--logo" href="#0">
             <img src="assets/img/o.png" alt="Global" height="80px" style="transform: translateY(10%);filter: brightness(1.75);">
-         <p style="margin-top: 4%;">ANTEAGLE</p> 
-          </a>
         
+          </a>
+          <section class="home" id="home">
+            <div class="home__container bd-container bd-grid">
+                <div class="home__data">
+                   
+                </div>
+            </div>
+        </section>
           <div class="header--nav-toggle">
             <span></span>
           </div>
@@ -288,35 +54,37 @@ input[type=checkbox]:checked + label {
             <li><span>Staking</span></li>
             <li><span>Insurance</span></li>
             <li><span>Roadmap</span></li>
-           
-            <li><span>Tokenomics</span></li> <li><span>Contact Us</span></li>
+           <li><span>Audio</span></li>
+           <li><span>video </span></li>
+            <li><span>Tokenomics</span></li> 
+            <li><span>Contact Us</span></li>
           </ul>
         </nav>
         <ul class="l-main-content main-content">
           <li class="l-section section section--is-active">
-            <div class="intro">
-              <div class="intro--banner">
-                <h1 style="transform: translateY(60%);margin-left: 5%;" >Welcome
-                 to<br>Antnet<br>Ecosystem</h1>
-               <div class="intro--line">
-                <img src="assets/img/i.png" alt="Welcome"  style="transform: translateX(15%);mix-blend-mode: multiply;">
-               </div>
-                
-              </div>
-              <div class="intro--options">
-                <a href="#0">
-                  <h3 style="text-align:center;">Video Rendering </h3>
-                  <p>Revolutionary video rendering service to boost up your creativity, Export your edited videos in just a click  with the support of sarvvid blockchain</p>
-                </a>
-                <a href="#0">
-                  <h3>Fantasy interactive</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                </a>
-                <a href="#0">
-                  <h3>Paul &amp; shark</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                </a>
-              </div>
+            <div class="work">
+              <div class="robo-set-1">
+                <div class="luxury-heading">
+
+                    <div class="luxury home__title" style=" font-size:14.5vw;
+                    font-family: cinzeldecorativebold;transform: translateY(110%);
+                    text-shadow: 0px 0px 13px #eaeaf025;text-align: center;
+                    color: #eaeaf0;"   >
+                        Luxury<span style="
+                          color:  #ffc857;font-size: 20px;">of</span>
+                    </div>
+
+                    <div class="design home__title" style="font-size:14.5vw;
+                    font-family: cinzeldecorativebold;transform: translateY(60%);margin-left: 100px;
+                    text-shadow: 0px 0px 13px #eaeaf025;text-align: center;
+                    color: #ffc857;">
+                        Design
+                    </div>
+                    <!-- No no no -->
+                </div>
+                <div class="home-img">
+                    <img src="assets/img/Robo final ver 1.gif" alt="robo" class="ROBOT" style="transform: translateX(-20%); transform"/>
+                </div>
             </div>
           </li>
            <li class="l-section section">
@@ -418,8 +186,6 @@ We provide insurance <br>to your cryptocurrency portfolio which will help you to
               
             </div>
           </li>
-   
-
            <li class="l-section section">
             <div class="work">
               <h2>Selected work</h2>
@@ -474,11 +240,8 @@ We provide insurance <br>to your cryptocurrency portfolio which will help you to
                 </div>
               </div>
             </div>
-          </li>
-
-           
-          
-<li class="l-section section">
+          </li>             
+             <li class="l-section section">
             <div class="about">
               <div class="about--banner">
 
@@ -573,7 +336,8 @@ We provide insurance <br>to your cryptocurrency portfolio which will help you to
             <li>Staking</li>
             <li>Insurance</li>
             <li>Roadmap</li>
-            
+            <li>Videos</li>
+            <li>AUDIO</li>
             <li>Tokenomics</li>
                <li>Contact Us</li>
   </ul>
@@ -581,176 +345,9 @@ We provide insurance <br>to your cryptocurrency portfolio which will help you to
 
 
 
-<script>
-  let rect = document.getElementById("rect");
-let username = document.getElementById("username");
-let password = document.getElementById("password");
-
-function handle1() {
-	rect.setAttribute("class", "rect2");
-}
-
-function handle2() {
-	rect.setAttribute("class", "rect1");
-}
-
-//For codepen header!!!
-setTimeout(() => {
-	password.focus();
-}, 500);
-
-setTimeout(() => {
-	username.focus();
-}, 1500);
-
-</script>
 
 
-  <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-<script src="https://www.amcharts.com/lib/3/pie.js"></script>
-<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-
-<script>
-  var chart = AmCharts.makeChart( "chartdiv", {
-  "type": "pie",
-  "theme": "light",
-  "dataProvider": [ {
-    "country": "Lithuania",
-    "value": 260
-  }, {
-    "country": "Ireland",
-    "value": 201
-  }, {
-    "country": "Germany",
-    "value": 65
-  }, {
-    "country": "Australia",
-    "value": 39
-  }, {
-    "country": "UK",
-    "value": 19
-  }, {
-    "country": "Latvia",
-    "value": 10
-  } ],
-  "valueField": "value",
-  "titleField": "country",
-  "outlineAlpha": 0.4,
-  "depth3D": 15,
-  "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
-  "angle": 30,
-  "export": {
-    "enabled": true
-  }
-} );
-jQuery( '.chart-input' ).off().on( 'input change', function() {
-  var property = jQuery( this ).data( 'property' );
-  var target = chart;
-  var value = Number( this.value );
-  chart.startDuration = 0;
-
-  if ( property == 'innerRadius' ) {
-    value += "%";
-  }
-
-  target[ property ] = value;
-  chart.validateNow();
-} );
-
-
-var chart1 = AmCharts.makeChart( "chartdiv1", {
-  "type": "pie",
-  "theme": "light",
-  "dataProvider": [ {
-    "country": "Lithuania",
-    "value": 260
-  }, {
-    "country": "Ireland",
-    "value": 201
-  }, {
-    "country": "Germany",
-    "value": 65
-  }, {
-    "country": "Australia",
-    "value": 39
-  }, {
-    "country": "UK",
-    "value": 19
-  }, {
-    "country": "Latvia",
-    "value": 10
-  } ],
-  "valueField": "value",
-  "titleField": "country",
-  "outlineAlpha": 0.4,
-  "depth3D": 15,
-  "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
-  "angle": 30,
-  "export": {
-    "enabled": true
-  }
-} );
-jQuery( '.chart-input' ).off().on( 'input change', function() {
-  var property = jQuery( this ).data( 'property' );
-  var target = chart1;
-  var value = Number( this.value );
-  chart1.startDuration = 0;
-
-  if ( property == 'innerRadius' ) {
-    value += "%";
-  }
-
-  target[ property ] = value;
-  chart1.validateNow();
-} );
-
-
-var chart2 = AmCharts.makeChart( "chartdiv2", {
-  "type": "pie",
-  "theme": "light",
-  "dataProvider": [ {
-    "country": "Lithuania",
-    "value": 260
-  }, {
-    "country": "Ireland",
-    "value": 201
-  }, {
-    "country": "Germany",
-    "value": 65
-  }, {
-    "country": "Australia",
-    "value": 39
-  }, {
-    "country": "UK",
-    "value": 19
-  }, {
-    "country": "Latvia",
-    "value": 10
-  } ],
-  "valueField": "value",
-  "titleField": "country",
-  "outlineAlpha": 0.4,
-  "depth3D": 15,
-  "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
-  "angle": 30,
-  "export": {
-    "enabled": true
-  }
-} );
-jQuery( '.chart-input' ).off().on( 'input change', function() {
-  var property = jQuery( this ).data( 'property' );
-  var target = chart2;
-  var value = Number( this.value );
-  chart2.startDuration = 0;
-
-  if ( property == 'innerRadius' ) {
-    value += "%";
-  }
-
-  target[ property ] = value;
-  chart2.validateNow();
-} );
-</script>
+ 
 
 <!------ Include the above in your HEAD tag ---------->
 
